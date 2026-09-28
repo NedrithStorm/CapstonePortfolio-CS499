@@ -5,7 +5,7 @@ During the course we were asked to do a code review of the artifact(s) we chose 
 
 # Code Review
 
-[![Code Review Video](https://youtube.com)](https://youtu.be/Xk2EULd66Gw)
+[![Code Review Video Thumbnail](https://img.youtube.com/vi/Xk2EULd66Gw/hqdefault.jpg)](https://youtu.be/Xk2EULd66Gw)
 
 *Click the image above to watch the video on YouTube.*
 
