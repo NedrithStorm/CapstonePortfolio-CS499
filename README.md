@@ -13,7 +13,8 @@ During the course we were asked to do a code review of the artifact(s) we chose 
 
 In CS-300 Data Structures and Algorithms we were asked to design algorithms for arrays, binary search trees, and hash tables for a course planning software.  The software had to read a .csv file, validate that a course existed for every pre-requisite, print out a list of all courses, and also find a print a specific course with any pre-requisites.  After designing the algorithms we were then asked to determine which data structure made sense for the software and then code the software.  It was a quick and simple program that was to be written in C++ as a console application. For the software I ended up using an array.
 
-<<Picture of console application>>
+<img width="856" height="498" alt="image" src="https://github.com/user-attachments/assets/f5946d21-c803-4071-ba47-9d0a0fc41da5" />
+
 
 # Enhancement 1 : Software enginerring
 
