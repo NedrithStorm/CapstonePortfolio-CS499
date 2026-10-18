@@ -1,7 +1,6 @@
-# CapstonePortfolio-CS499
-The project for my CS-499 my professional portfolio and final project
-
 # Professional Self-Assessement
+
+This project was made during my time at SNHU CS-499, the Computer Science Capstone course.  The goal was to take one or more programs that were made during the various courses at SNHU, and enhance them.  One enhancement was to be targeted at Software design and engineering, a second one at Algorithms and data structure, and a final targeted towards databases.  For this project I took the same C++ artifact, translated it to python for software design and engineering, added hash tables to the data structure used and analyzed the performance difference for DSA, and finally added a database to the software and the ability to add and remove courses for the database enhancement.
 
 This capstone showed me a number of things.  First, that I can easily translate code that worked in C++ to Python.  Next, That I can work with a library I never used before , Tkinter, and work with it to create a well-functioning GUI.  And furthermore that I can design a database and interact with it using Python without an issue. This was not only my first time using SQLite, but also one of the few times I made in-depth code to interact with a database using Python.
 
