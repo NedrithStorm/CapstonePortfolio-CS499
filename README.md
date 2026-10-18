@@ -1,6 +1,14 @@
 # CapstonePortfolio-CS499
 The project for my CS-499 my professional portfolio and final project
 
+# Professional Self-Assessement
+
+This capstone showed me a number of things.  First, that I can easily translate code that worked in C++ to Python.  Next, That I can work with a library I never used before , Tkinter, and work with it to create a well-functioning GUI.  And furthermore that I can design a database and interact with it using Python without an issue. This was not only my first time using SQLite, but also one of the few times I made in-depth code to interact with a database using Python.
+
+Overall I came up with a number of enhancements to an program we made, designed them, and then implemented over a short period of time.  The enhancement started with a week to plan it, a week to review the code, and then one week for each of the 3 enhancements.  I did all of this in my free time while going to work and living a relatively normal life.  I think this project showcases not only my software engineering and database skills but also my ability to be adaptable and learn new things.  It also showcases my ability to understand DSA concepts such as big-O notation and writing code to determine performance improvements when needed.  I was able to create a secure project, communicate weekly with my instructor on how progress was going, and create a professional code review that when done with others will allow us to ensure that we are writing code that is as high quality as possible by finding areas of improvements and parts that went well.
+
+Overall I hope that anyone looking at this project will like how a took a simple console based course planner and turned it into one where courses can be added, saved, and with a GUI that makes it look a bit more modern and is easier to use than a console application all done in a short period of time.
+
 # Code Review
 
 During the course we were asked to do a code review of the artifact(s) we chose to enhance.  Since I'm using the same artifact for all of the enhancements I had to do a 30 minute code review of my course planning software from CS-300 Data Structures and Algorithms.  Overall the code was well written but I found a few issues with my comments for the Courses class and missing input validation which introduced a critical flaw
