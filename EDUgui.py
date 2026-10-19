@@ -423,12 +423,17 @@ class EDUgui:
             text="Course ID"
         ).grid(row=0, column=0, padx=5, pady=5)
 
+        course_id_entry = tk.Entry(form)
+        course_id_entry.grid(row=0, column = 1, padx=5, pady=5)
+        course_id_entry.insert(0, course.course_id)
+        course_id_entry.config(state="readonly")
+
         tk.Label(
             form,
             text="Course Name"
         ).grid(row=1, column=0, padx=5, pady=5)
 
-        course_name_entry = tk.Entry(form)
+        course_name_entry = tk.Entry(form,width = 35)
         course_name_entry.grid(row=1,column=1,padx=5,pady=5)
         course_name_entry.insert(0,course.course_name)
 
