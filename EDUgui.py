@@ -346,7 +346,7 @@ class EDUgui:
         tk.Button(form, text="Delete", command=delete_course).grid(
             row = 3, column = 0, columnspan = 2, pady = 10
         )
-
+    """creates a form to delete a prereq from a course"""
     def delete_prereq_form(self):
         form = tk.Toplevel(self.root)
         form.title("Delete Prereq")
@@ -394,6 +394,7 @@ class EDUgui:
         tk.Button(form, text="Delete", command=delete_prereq).grid(
             row = 4, column = 0, columnspan = 2, pady = 10
         )
+    """code to delete the item type the drop_down box says"""
     def delete_selected_item(self):
         selected_option = self.insert_type_box.get()
         if selected_option == "Course":

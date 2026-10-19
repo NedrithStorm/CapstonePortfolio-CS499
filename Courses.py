@@ -99,13 +99,24 @@ class Courses:
         elif not course.prereqs:
             output += "Prerequisites: None"
         return output
+        """ inserts a course into both hash and array
 
+        Args:
+            course: course to insert
+        """
     def insert_course(self, course):
         """Insert given course to catalog and set list to unsorted"""
         self.course_list.append(course)
         self.course_table[course.course_id] = course
         self.sorted = False
+    """Deletes a course
 
+        Args:
+            course_id: course to delete
+
+        Returns:
+            True if course deleted, false otherwise
+    """
     def delete_course(self, course_id):
 
         course = self.find_course(course_id)
@@ -117,7 +128,14 @@ class Courses:
         self.course_table.pop(course_id)
 
         return True
+    """Deletes a pre-req from a course
+        Args:
+            course_id: course to remove pre-req from
+            prereq_id: prereq to remove
 
+        Returns:
+            True if pre-req deleted false otherwise
+    """
     def delete_prereq(self,course_id,prereq_id):
         course = self.find_course(course_id)
 
@@ -130,21 +148,34 @@ class Courses:
         course.prereqs.remove(prereq_id)
 
         return True
+    """Removes specific prereq from all courses
+    
+        Args:
+            prereq_id: course id of prereq to remove from all courses
+    """
     def remove_prereq_from_courses(self, prereq_id):
          for course in self.course_table.values():
             if prereq_id in course.prereqs:
                 course.prereqs.remove(prereq_id)
-    
+    """Sorts all the courses"""
     def sort_courses(self):
         """Uses pythons built in sort function to sort the course catalog when needed"""
         if(self.sorted == False):
             self.course_list.sort(key=lambda course: course.course_id)
         self.sorted = True
-
+    """Get the number of courses"""
     def get_number_of_courses(self):  
         """Returns the number of courses in the course catalog"""
         return len(self.course_list) 
-
+    """Adds a pre-req to a course
+    
+        Args:
+            course_id: course to add prereq to
+            prereq_id: prereq to add
+            
+        Returns:
+            True if prereq added, false otherwise
+    """
     def add_pre_req(self, course_id, prereq_id):
         course = self.find_course(course_id)
 

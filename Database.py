@@ -4,7 +4,7 @@ class Database:
     def __init__(self):
         self.conn = None
         self.dbName = ""
-
+    """Creates a new database"""
     def create_database(self):
         if self.conn is not None:
             cursor = self.conn.cursor()
@@ -25,6 +25,13 @@ class Database:
             ''')
 
             self.conn.commit()
+
+    """Creates a course with given course_id and name
+    
+        Returns:
+            Trues if course created, false otherwise
+            
+    """
     def create_course(self,course_id,course_name):
         if self.conn is not None:
             cursor = self.conn.cursor()
@@ -37,7 +44,15 @@ class Database:
                 return cursor.rowcount == 1
 
         return False
-
+    """Deletes a course
+    
+        Args:
+            course_id: id of course to delete
+            
+        Returns:
+            True if course deleted, false otherwise
+            
+    """
     def delete_course(self,course_id):
         if self.conn is not None:
             cursor = self.conn.cursor()
@@ -48,7 +63,16 @@ class Database:
             self.conn.commit()
 
             return cursor.rowcount == 1
-
+    """Deletes a pre-req from a course
+    
+        Args:
+            course_id: course to remove prereq from
+            prereq_id: course id of pre-req to remove
+            
+        Returns:
+            True if prereq add, false otherwise
+            
+    """
     def delete_prereq(self,course_id,prereq_id):
         if self.conn is None:
             return False
@@ -63,7 +87,15 @@ class Database:
         self.conn.commit()
 
         return cursor.rowcount == 1
+    """finds a course with the given course_id
     
+        Args:
+            course_id: course to find
+            
+        Return:
+            course found
+            
+    """
     def find_course(self, course_id):
         cursor = self.conn.cursor()
 
@@ -74,11 +106,11 @@ class Database:
             return result
         else:
             return None
-
+    """connects to a database with a given name"""
     def connect_database(self, db_name):
             self.conn = sqlite3.connect(db_name)
             self.create_database()
-
+    """Returns a list of all courses"""
     def retrieve_all_courses(self):
 
         cursor = self.conn.cursor()
@@ -86,7 +118,16 @@ class Database:
         cursor.execute("SELECT * FROM courses ORDER BY course_id ASC")
 
         return cursor.fetchall()
-
+    """Adds a prereq to a course
+    
+        Args:
+            course: course to add prereq to
+            prereq: prereq of course to add
+            
+        Returns:
+            True if prereq added, false otherwise
+            
+    """
     def add_prereq(self,course,prereq):
 
         if self.find_course(course) is not None:
@@ -103,7 +144,15 @@ class Database:
                 return False
         else:
             return False
-
+    """finds all pre-reqs for a given course
+    
+        Args:
+            course: course id to find prereqs
+            
+        Returns:
+            array of prereqs for the course, empty array if none exists
+            
+    """
     def find_prereqs(self, course):
         if self.conn is None:
             return []
@@ -121,7 +170,16 @@ class Database:
         prereqs = [row[0] for row in cursor.fetchall()]
 
         return prereqs
-
+    """Updates a course's name
+    
+        Args:
+            course_id: course_id to update
+            course_name: new name of the course
+            
+        Returns:
+            True if course updated, false otherwise
+            
+    """
     def update_course(self,course_id,course_name):
         if self.conn is not None:
             cursor = self.conn.cursor()
